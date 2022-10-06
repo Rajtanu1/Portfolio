@@ -1,0 +1,217 @@
+:root {
+  --circle-radius-value: 0%;
+  --dark-plum: #a75eff;
+  --dark-grey: #60656a;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  color: var(--dark-plum);
+  font-family: "Space Grotesk", Tahoma;
+  font-size: 1.3rem;
+}
+
+.header__logo {
+  margin-left: 5vw;
+  display: flex;
+  align-self: center;
+  position: relative;
+}
+
+.header__logo::after {
+  content: "Web-Developer Rajtanu\00a0 Chakravarty";
+  display: block;
+  position: absolute;
+  top: -0.9rem;
+  left: 100%;
+  margin-left: 8px;
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #716c6c;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  color: white;
+  clip-path: circle(var(--circle-radius-value) at 0% 0%);
+  transition: clip-path 0.5s;
+}
+
+.header__logo:hover {
+  --circle-radius-value: 150%;
+}
+
+.logo__left-side, .logo__right-side {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+}
+
+.logo__left-side {
+  transform: rotate(45deg);
+}
+
+.logo__right-side {
+  transform: rotate(-135deg);
+}
+
+.logo__left-side::before, .logo__left-side::after, .logo__right-side::before, .logo__right-side::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: var(--dark-grey);
+  border-radius: 8px;
+}
+
+.logo__left-side::before, .logo__right-side::before {
+  width: 35%;
+  height: 100%;
+}
+
+.logo__left-side::after, .logo__right-side::after {
+  width: 100%;
+  height: 35%;
+  bottom: 0px;
+}
+
+.logo__center {
+  width: 0.8rem;
+  position: relative;
+  font-size: 2rem;
+}
+
+.logo__center::after {
+  content: "";
+  display: inline-block;
+  width: 0.3rem;
+  height: 2rem;
+  position: absolute;
+  margin-left: 0.2rem;
+  border-radius: 8px;
+  background-color: var(--dark-plum);
+  transform: rotate(15deg) translateY(-0.5rem);
+}
+
+.header__navbar {
+  margin-left: auto;
+  margin-right: 5vw;
+}
+
+.navbar__list {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0px;
+  color: var(--dark-grey);
+  font-family: "Exo 2", "Space Grotesk", Tahoma;
+  font-size: 1.3rem;
+}
+
+.navbar__link {
+  width: 9.3rem;
+  padding: 0px 0.3rem;
+  box-sizing: border-box;
+  border-left: 0px solid var(--dark-plum);
+  border-right: 0px solid var(--dark-plum);
+  text-align: center;
+  transition: border-width 0.2s;
+}
+
+.navbar__link:hover {
+  border-width: 6px;
+}
+
+.about {
+  display: flex;
+  width: 100%;
+}
+
+.about__heading {
+  width: 40%;
+  margin-top: 10%;
+  margin-left: 5vw;
+  position: relative;
+  font-size: 1.8rem;
+  font-family: "Exo 2", Tahoma;
+}
+
+.about__heading::before, .about__heading::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 27%; 
+  position: absolute;
+  border-radius: 8px;
+  background-color: #8080802e;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.about__heading::before {
+  animation-name: move-top-square;
+}
+
+@keyframes move-top-square {
+  25% {
+    transform: translateX(400%);
+  }
+  50% {
+    transform: translateX(400%) translateY(150%);
+  }
+  75% {
+    transform: translateX(400%) translateY(150%) translateX(-400%);
+  }
+  100% {
+    transform: translateX(400%) translateY(150%) translateX(-400%) translateY(-150%);
+  }
+}
+
+.about__heading::after {
+  animation-name: move-bottom-square;
+  right: 0px;
+}
+
+@keyframes move-bottom-square {
+  25% {
+    transform: translateX(-400%);
+  }
+  50% {
+    transform: translateX(-400%) translateY(-150%);
+  }
+  75% {
+    transform: translateX(-400%) translateY(-150%) translateX(400%);
+  }
+  100% {
+    transform: translateX(-400%) translateY(-150%) translateX(400%) translateY(150%);
+  }
+}
+
+.about__h1 {
+  margin: 0px;
+  color: #a573e1;
+}
+
+.about__image {
+  width: 50%;
+  margin-top: 2%;
+  margin-left: 10%;
+  clip-path: inset(20% 20%);
+  transform: scale(1.4);
+}
+
+.mern__M {
+  color: #0e880e;
+}
+
+.mern__R {
+  color: #3db6dd;
+}
+
+.mern__N {
+  color: #0ce30c;
+}
+
