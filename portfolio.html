@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/82fa38c892.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="./public/portfolio.css" rel="stylesheet" />
   <title>Rajtanu Chakravarty</title>
 </head>
@@ -29,8 +30,8 @@
     <div class="header__navbar-icon"></div>
     <nav class="header__navbar navbar">
       <ul class="navbar__list">
-        <a class="navbar__link">Projects</a>
-        <a class="navbar__link">About</a>
+        <a href="#projects"class="navbar__link">Projects</a>
+        <a href="#more-about-myself" class="navbar__link">About</a>
         <a class="navbar__link">Contact Me</a>
       </ul>
     </nav>
@@ -38,14 +39,52 @@
   <section class="about">
     <div class="about__heading">
       Hello there,
-      <h1 class="about__h1">I am Rajtanu Chakravarty.</h1>
+      <h1 class="about__h1">I'm Rajtanu Chakravarty.</h1>
       A fullstack developer, who is self-taught and uses 
       <span class='mern'>
         <span class='mern__M'>M</span><span class='mern__E'>E</span><span class='mern__R'>R</span><span class='mern__N'>N</span>
       </span> 
-      stack to create web applications.
+      stack to create web applications.<br>
+      <button type="button" class="about__button button">
+        <a href="#more-about-myself">More about me</a>
+      </button>
     </div>
-    <img class="about__image" src="./public/developer.jpg" alt="developer">
+    <img class="about__image" src="./public/images/developer.jpg" alt="developer">
   </section>
+  <section id="more-about-myself" class="more-about-myself">
+    <h2 class="h2">
+      <span class="more-about-myself__h2-span">About</span>
+    </h2>
+    <p class="more-about-myself__para">
+      Hey &nbsp;<span class="material-icons hand-wave">waving_hand</span>, nice meeting you again. Let me introduce myself.<br><br>
+      I'm a web developer, who is self-taught and learned fullstack development with a goal to develop applications that can make a difference.<br><br>
+      My journey hasn't only taught me how to write code but has also helped me to grow and improve as an individual.
+      Taught me humility, persistency, discipline, patience and so much more. And I hope to share that with the people around me.<br><br>
+      I got intrigued by javascript when I first used console.log() and ever since then I have been constantly learning and creating applications using various tools of the javascript ecosystem.
+    </p>
+  </section>
+  <section id="projects" class="projects">
+    <h2 class="h2"><span class="projects__h2-span">Projects</span></h2>
+    <div class="projects__project1 project1">
+      <img class="project1__img" src="./public/images/project1.png" alt="" referrerpolicy="no-referrer">
+      <div class="project1__description">
+        <p class="project1__hash">Project<sup>#</sup>1</p>
+        <p class="project1__title">Chat Messenger</p>
+        <p class="project1__details">A chat application that was created using MERN stack. Features: authentication, google-login, group/private chat, message notification, responsiveness, interactive navigation bar. 
+        <div class="project1__tools">Technologies used:
+          <i class="fa-brands fa-html5"></i>
+          <i class="fa-brands fa-css3-alt"></i>
+          <i class="fa-brands fa-square-js"></i>
+          <i class="fa-brands fa-react"></i>
+          <i class="fa-brands fa-node-js"></i>
+        </div>
+        </div>
+    </div>
+    <div class="projects__project2">
+    </div>
+    <div class="projects__project3">
+    </div>
+  </section>
+  <script src="./public/portfolio.js"></script>
 </body>
 </html>
