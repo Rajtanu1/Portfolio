@@ -914,7 +914,7 @@ name-field:valid, .email-field:valid, .message-field:valid {
 
   .project1__image-container, .project2__image-container, .project3__image-container {
     width: 100%;
-    height: 45vh;
+    height: 43vh;
     position: absolute;
     border: 0px;
     border-radius: 8px;
@@ -924,7 +924,7 @@ name-field:valid, .email-field:valid, .message-field:valid {
 
   .project1__description, .project2__description, .project3__description {
     width: 100%;
-    height: 45vh;
+    height: 43vh;
     align-items: center;
     border-radius: 1.5rem;
     background-color: var(--darker-grey);
