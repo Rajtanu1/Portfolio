@@ -10,10 +10,10 @@
   --dark-grey: #60656a;
   --darker-grey: #313535;
   --html5-color: #ff5a29;
-  --css3-color:#1abeff;
-  --js-color:#ffce0e;
-  --react-color:#29e6d3;
-  --node-color:#34ea0e;
+  --css3-color: #1abeff;
+  --js-color: #ffce0e;
+  --react-color: #29e6d3;
+  --node-color: #34ea0e;
   --exo2-and-tahoma-fontstack: "Exo 2", Tahoma;
   scrollbar-width: none;
 }
@@ -116,7 +116,6 @@ button {
 
 @keyframes point-downwards {
   from {
-
   }
   to {
     transform: translateY(25vh);
@@ -183,7 +182,7 @@ button {
 }
 
 .logo__left-side::before, .logo__left-side::after, .logo__right-side::before, .logo__right-side::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   background-color: var(--dark-grey);
@@ -266,7 +265,6 @@ button {
   font-family: var(--exo2-and-tahoma-fontstack);
 }
 
-
 .about__h1 {
   margin: 0px;
   color: #8a52ce;
@@ -299,17 +297,17 @@ button {
 }
 
 .about__button::before {
-	content: "";
-	display: block;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: -1;
-	background-color: #423842;
-	clip-path: circle(var(--circle-radius-value) at 0% 50%);
-	transition: clip-path 0.5s;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  background-color: #423842;
+  clip-path: circle(var(--circle-radius-value) at 0% 50%);
+  transition: clip-path 0.5s;
 }
 
 .about__button:hover {
@@ -317,7 +315,6 @@ button {
   border-color: transparent;
   color: white;
 }
-
 
 .more-about-myself {
   width: 100vw;
@@ -346,7 +343,7 @@ button {
 .more-about-myself__h2-span, .projects__h2-span, .contact-info__h2-span {
   display: inline-block;
   width: 0%;
-  height: 4.4rem; 
+  height: 4.4rem;
   padding: 3.8rem 12px 8px;
   box-sizing: border-box;
   border-left-width: 0.5rem;
@@ -393,8 +390,6 @@ button {
   }
 }
 
-
-
 .more-about-myself__para {
   font-size: 1.6rem;
 }
@@ -404,7 +399,7 @@ button {
   margin-bottom: 15rem;
   padding: 10vh 5vw;
   box-sizing: border-box;
-  font-family: var(--exo2-and-tahoma-fontstack); 
+  font-family: var(--exo2-and-tahoma-fontstack);
 }
 
 .projects__h2-span {
@@ -493,11 +488,9 @@ button {
   background-color: black;
 }
 
-
 .project1__website-links {
   z-index: var(--z-index-value);
 }
-
 
 .project1__description, .project2__description, .project3__description {
   width: 40%;
@@ -513,7 +506,7 @@ button {
 .project1__hash, .project2__hash, .project3__hash {
   padding: 0.2rem 1rem 0.4rem;
   box-sizing: border-box;
-  border-radius:0.8rem;
+  border-radius: 0.8rem;
   background-color: var(--darker-grey);
   color: inherit;
 }
@@ -578,7 +571,7 @@ button {
 
 .fa-github, .fa-arrow-up-right-from-square {
   font-size: 3.8rem;
-  margin: 0px 0.8rem; 
+  margin: 0px 0.8rem;
   transition: transform 0.3s, color 0.3s;
 }
 
@@ -586,7 +579,6 @@ button {
   transform: scale(1.2);
   color: #6d3f82;
 }
-
 
 .project2 {
   flex-direction: row-reverse;
@@ -653,7 +645,6 @@ button {
   }
 }
 
-
 .form__name-container, .form__email-container {
   width: 45%;
   display: flex;
@@ -672,7 +663,7 @@ button {
   box-sizing: border-box;
   border: 0px;
   border-radius: 1rem;
-  font-size: 1.5rem;  
+  font-size: 1.5rem;
   font-family: monospace;
   outline: none;
   transition: box-shadow 0.3s, font-size 0.3s;
@@ -704,13 +695,13 @@ button {
 
 name-field:valid, .email-field:valid, .message-field:valid {
   border-width: 0px;
-}  
+}
 
 .form__submit-button {
   margin-top: 1.5rem;
   position: relative;
   border-radius: 1rem;
-  border: 0px; 
+  border: 0px;
   background-color: #dfdfdff2;
   color: white;
   overflow: hidden;
@@ -737,10 +728,12 @@ name-field:valid, .email-field:valid, .message-field:valid {
     transform: rotate(-315deg) translate(-44px, 44px) translate(88px, -88px);
   }
   80% {
-    transform: rotate(-315deg) translate(-44px, 44px) translate(88px, -88px) translate(-44px, 44px);
+    transform: rotate(-315deg) translate(-44px, 44px) translate(88px, -88px)
+      translate(-44px, 44px);
   }
   100% {
-    transform: rotate(-315deg) translate(-44px, 44px) translate(88px, -88px) translate(-44px, 44px) rotate(315deg);
+    transform: rotate(-315deg) translate(-44px, 44px) translate(88px, -88px)
+      translate(-44px, 44px) rotate(315deg);
   }
 }
 
@@ -770,7 +763,7 @@ name-field:valid, .email-field:valid, .message-field:valid {
 
 .form__thank-you-container {
   width: 100%;
-  height: 100%; 
+  height: 100%;
   position: absolute;
   background-color: var(--darker-grey);
   text-align: center;
@@ -789,7 +782,7 @@ name-field:valid, .email-field:valid, .message-field:valid {
   to {
     transform: scale(0);
   }
-} 
+}
 
 .form__back-button {
   border-color: #7a61da;
@@ -810,7 +803,7 @@ name-field:valid, .email-field:valid, .message-field:valid {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-50%)
+    transform: translateX(-50%);
   }
 }
 
@@ -850,7 +843,7 @@ name-field:valid, .email-field:valid, .message-field:valid {
 
 @media (max-width: 1080px) {
   .h2 {
-     font-size: 2.5rem;
+    font-size: 2.5rem;
   }
 
   .fa-github, .fa-arrow-up-right-from-square {
@@ -921,7 +914,7 @@ name-field:valid, .email-field:valid, .message-field:valid {
 
   .project1__image-container, .project2__image-container, .project3__image-container {
     width: 100%;
-    height: 50vh;
+    height: 30vh;
     position: absolute;
     border: 0px;
     border-radius: 8px;
@@ -931,10 +924,11 @@ name-field:valid, .email-field:valid, .message-field:valid {
 
   .project1__description, .project2__description, .project3__description {
     width: 100%;
-    height: 50vh;
+    height: 30vh;
     align-items: center;
     border-radius: 1.5rem;
     background-color: var(--darker-grey);
+    font-size: 1rem;
   }
 
   .project1__title, .project1__details, .project1__tools {
@@ -1001,7 +995,7 @@ name-field:valid, .email-field:valid, .message-field:valid {
   }
 
   .about__image {
-    width: 80%
+    width: 80%;
   }
 
   .more-about-myself__para {
@@ -1033,5 +1027,4 @@ name-field:valid, .email-field:valid, .message-field:valid {
   .thanking-bot-image {
     width: 30%;
   }
-
 }
