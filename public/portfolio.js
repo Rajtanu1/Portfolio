@@ -178,7 +178,7 @@ contactForm.addEventListener("keyup", function (event) {
 
 contactForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  httpRequest.open("POST", "https://formsubmit.co/rajtanuchakravarty@gmail.com");
+  httpRequest.open("POST", "https://formsubmit.co/994b926934c1ae40e2af507b73f2a6d");
   httpRequest.send();
 });
 
