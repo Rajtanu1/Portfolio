@@ -10,11 +10,19 @@ let project3InfoButton = document.querySelector('.project3__info-button');
 let moreAboutMyselfContainer = document.querySelector('.more-about-myself');
 let projectsContainer = document.querySelector('.projects');
 let contactInfoContainer = document.querySelector('.contact-info');
+let contactForm = document.querySelector('.contact-info__form');
+let formSubmitButton = document.querySelector('.form__submit-button');
+let formBackButton = document.querySelector('.form__back-button');
 let header = document.querySelector('.header');
 let navbar = document.querySelector('.navbar');
 let navbarList = document.querySelector('.navbar__list');
 let navbarIcon = document.querySelector('.header__navbar-icon');
 let navbarVisibility;
+let rocketIcon = document.querySelector('.fa-rocket');
+let leftArrowIcon = document.querySelector('.fa-arrow-left-long');
+let sentText = document.querySelector('.sent-text');
+let thankyouContainer = document.querySelector('.form__thank-you-container');
+
 
 let checkTransformValuePresence = function(element) {
   if(element.style.transform !== "") {
@@ -23,6 +31,21 @@ let checkTransformValuePresence = function(element) {
     return false;
   }
 };
+
+let checkFormValidity = function() {
+  let name = contactForm.name.value;
+  let email =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(contactForm.email.value);
+  let message = contactForm.message.value;
+  let arrayOfFormValues = [name, email, message];
+
+  return arrayOfFormValues.indexOf(false) === -1 && arrayOfFormValues.indexOf("") === -1 ? true : false;
+}  
+
+let clearFormInputFields = function() {
+  contactForm.name.value = "";
+  contactForm.email.value = "";
+  contactForm.message.value = "";
+}
 
 let animateObservedElement = function(elementToAnimate) {
   if(elementToAnimate === moreAboutMyselfContainer) {
@@ -61,6 +84,7 @@ let hideNavbar = function() {
 let intersectionObserverCallback = function(arrayOfIntersectionObserverEntryObjects) {
   arrayOfIntersectionObserverEntryObjects.forEach( entryObject => {
     let observedElement = entryObject.target;
+
     if(entryObject.isIntersecting) {
       animateObservedElement(observedElement);
     }
@@ -143,8 +167,41 @@ project3InfoButton.addEventListener('click', function(event) {
   }
 });
 
+contactForm.addEventListener('keyup', function(event) {
+  let targetElement = event.target;
+
+  if(checkFormValidity() === true && targetElement.checkValidity() === true) {
+    formSubmitButton.style.backgroundColor = "#7a61da";
+  }  else {
+    formSubmitButton.style.backgroundColor = "#dfdfdff2";
+  }
+});
+
+formSubmitButton.addEventListener('click', function(event) {
+  if(checkFormValidity()) { 
+  rocketIcon.style.animationName = 'launch';
+  sentText.style.animationName = 'slide-right';
+  contactForm.style.animationName = 'scale-change';
+  thankyouContainer.style.animationDelay= '3s';
+  thankyouContainer.style.animationName = 'scale-change';
+  leftArrowIcon.style.animationName = 'pointing-left'; 
+  } else {
+    return;
+  }
+});
+
+formBackButton.addEventListener('click', function(event) {
+  rocketIcon.style.animationName = ''
+  sentText.style.animationName = '';
+  contactForm.style.animationName = '';
+  thankyouContainer.style.animationDelay = '0s';
+  thankyouContainer.style.animationName = 'scale-down';
+  clearFormInputFields();
+});
+
 navbarList.addEventListener('click', function(event) {
   let eventTarget = event.target;
+
   if(eventTarget.parentElement === navbarList ) {
     hideHeader();
   }

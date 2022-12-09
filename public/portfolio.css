@@ -384,7 +384,7 @@ button {
   animation-iteration-count: 3;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
-  animation-delay: 1.5s;
+  animation-delay: 2.5s;
 }
 
 @keyframes hand-waving {
@@ -619,17 +619,12 @@ button {
   border-top-left-radius: 5vw;
   border-top-right-radius: 5vw;
   background-color: var(--darker-grey);
+  font-family: var(--exo2-and-tahoma-fontstack);
   color: white;
 }
 
 .contact-info__h2-span {
   border-color: #7a61da;
-}
-
-.contact-info__para {
-  margin: 1rem 0px 0px;
-  font-size: 1.6rem;
-  text-align: center;
 }
 
 .fa-handshake {
@@ -640,9 +635,22 @@ button {
 .contact-info__form {
   width: 60%;
   margin: 5rem auto 5rem;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   font-size: 1.4rem;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
+
+@keyframes scale-change {
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 
@@ -657,10 +665,11 @@ button {
 }
 
 .name-field, .email-field {
-  width: 90%;
+  width: 100%;
   height: 3rem;
   margin: 0.5rem 0px 1.5rem;
   padding: 0px 1rem;
+  box-sizing: border-box;
   border: 0px;
   border-radius: 1rem;
   font-size: 1.5rem;  
@@ -674,6 +683,7 @@ button {
   height: 10rem;
   margin-top: 0.5rem;
   padding: 1rem;
+  box-sizing: border-box;
   border: 0px;
   border-radius: 1rem;
   font-size: 1.5rem;
@@ -684,53 +694,128 @@ button {
 }
 
 .name-field:focus, .email-field:focus, .message-field:focus {
-  box-shadow: 0px 6px #171717;
+  border: 3px solid #7a61da;
   font-size: 1.2rem;
 }
 
+.name-field:invalid, .email-field:invalid, .message-field:invalid {
+  border-width: 0px;
+}
+
+name-field:valid, .email-field:valid, .message-field:valid {
+  border-width: 0px;
+}  
+
 .form__submit-button {
   margin-top: 1.5rem;
+  position: relative;
   border-radius: 1rem;
   border: 0px; 
-  background-color: #7a61da;
+  background-color: #dfdfdff2;
   color: white;
   overflow: hidden;
+  outline: none;
 }
 
 .fa-rocket {
   transform-origin: top left;
-  animation-name: launch;
   animation-duration: 4s;
   animation-timing-function: ease-in;
-  animation-delay: 2s;
 }
 
 @keyframes launch {
   16% {
     transform: rotate(-315deg);
-    color: black;
   }
   32% {
     transform: rotate(-315deg) translate(-44px, 44px);
-    color: black;
   }
   48% {
     transform: rotate(-315deg) translate(-44px, 44px) translate(88px, -88px);
-    color: black;
-    opacity: 1;
   }
   64% {
     transform: rotate(-315deg) translate(-44px, 44px) translate(88px, -88px);
-    color: black
   }
   80% {
     transform: rotate(-315deg) translate(-44px, 44px) translate(88px, -88px) translate(-44px, 44px);
-    color: black;
   }
   100% {
     transform: rotate(-315deg) translate(-44px, 44px) translate(88px, -88px) translate(-44px, 44px) rotate(315deg);
-    color: white;
   }
+}
+
+.sent-text {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translateX(-100%);
+  background-color: #7a61da;
+  animation-duration: 2s;
+  animation-delay: 1.5s;
+}
+
+@keyframes slide-right {
+  50% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.form__thank-you-container {
+  width: 100%;
+  height: 100%; 
+  position: absolute;
+  background-color: var(--darker-grey);
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: var(--exo2-and-tahoma-fontstack);
+  transform: scale(0);
+  animation-duration: 0.25s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes scale-down {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+} 
+
+.form__back-button {
+  border-color: #7a61da;
+  background-color: #7a61da;
+  color: white;
+  outline: none;
+}
+
+.fa-arrow-left-long {
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  animation-direction: alternate;
+}
+
+@keyframes pointing-left {
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%)
+  }
+}
+
+.thanking-bot-image {
+  width: 25%;
 }
 
 .contact-info__connecting-platforms {
@@ -763,7 +848,7 @@ button {
   margin-top: 5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   .h2 {
      font-size: 2.5rem;
   }
@@ -808,7 +893,7 @@ button {
 
   .about__image {
     width: 100%;
-    margin: 0px;
+    margin: auto;
     transform: none;
     clip-path: none;
   }
@@ -900,16 +985,53 @@ button {
   }
 
   .name-field, .email-field, .message-field {
+    width: 100%;
     font-size: 1.4rem;
   }
 
-  .message-field {
-    width: 90%;
+  .thanking-bot-image {
+    width: 45%;
   }
 }
 
-/* @media (min-width: 769px) {
-  body {
-    background-color: pink;
+@media (min-width: 769px) and (max-width: 1080px) {
+  .fa-github, .fa-arrow-up-right-from-square {
+    font-size: 4rem;
+    margin: 0px 1rem;
   }
-} */
+
+  .about__image {
+    width: 80%
+  }
+
+  .more-about-myself__para {
+    font-size: 1.5rem;
+  }
+
+  .project1, .project2, .project3 {
+    width: 70%;
+    margin: 3rem auto 8.5rem;
+  }
+
+  .project1__image-container, .project2__image-container, .project3__image-container {
+    height: 23rem;
+  }
+
+  .project1__description, .project2__description, .project3__description {
+    height: 23rem;
+    font-size: 1.5rem;
+  }
+
+  .project1__tools, .project2__tools, .project3__tools {
+    font-size: 1.5rem;
+  }
+
+  .contact-info__para {
+    font-size: 1.5rem;
+  }
+
+  .thanking-bot-image {
+    width: 30%;
+  }
+
+}

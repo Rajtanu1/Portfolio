@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="./public/portfolio.css" rel="stylesheet" />
   <title>Rajtanu Chakravarty</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn1.iconfinder.com/data/icons/professional-avatars-7/64/programmer-programming-developer-designer-avatar-512.png">
 </head>
 <body>
   <div class="intro">
@@ -71,10 +72,10 @@
     </h2>
     <p class="more-about-myself__para">
       Hey &nbsp;<span class="material-icons hand-wave">waving_hand</span>, nice meeting you again. Let me introduce myself.<br><br>
-      I'm a web developer, who is self-taught and learned fullstack development with a goal to develop applications that can create a difference.<br><br>
+      I'm a web developer, who is self-taught and learned fullstack development with a goal to develop full-fledged applications.<br><br>
       My journey hasn't only taught me how to write code but has also helped me to grow and improve as an individual.
-      Taught me humility, persistency, discipline, patience and so much more. And I hope to share that with the people around me.<br><br>
-      I was intrigued by javascript when I first used console.log() and ever since then I have been constantly learning and improving as a developer.
+      Taught me humility, persistency, discipline, patience and lot more. And I hope to share that with the people around me.<br><br>
+      Javascript is the language that I started with and was amazed by the things that I could do with it. Since then, I never stopped learning and have been growing and improving as a developer. 
     </p>
   </section>
   <section id="projects" class="projects observed-element">
@@ -189,24 +190,36 @@
     <h2 class="contact-info__h2 h2">
       <span class="contact-info__h2-span">Contact Me</span>
     </h2>
-    <p class="contact-info__para">Let's try to know each other better.&nbsp;
-      <i class="fa-solid fa-handshake"></i>
-    </p>
-    <form class="contact-info__form form" method="POST" action="">
+    <form class="contact-info__form form" method="POST" action="https://formsubmit.co/rajtanuchakravarty@gmail.com">
       <div class="form__name-container">
         <label class="label" for="name-field">Name:</label>
-        <input type="text" id="name" class="name-field" name="name" placeholder="your name"/>
+        <input type="text" id="name" class="name-field" name="name" placeholder="your name" required/>
       </div>
       <div class="form__email-container">
         <label class="label" for="email-field">Email:</label>
-        <input type="email" id="email" class="email-field" name="email" placeholder="your email"/> 
+        <input type="email" id="email" class="email-field" name="email" placeholder="your email" required/> 
       </div>
       <label class="label" for="message-field">Message:</label>
-      <textarea id="message" class="message-field" name="message" placeholder="your message here..." spellcheck="false"/></textarea>
+      <textarea id="message" class="message-field" name="message" placeholder="your message here..." spellcheck="false" required/></textarea>
       <button class="form__submit-button" type="button">
         Submit
+        <span class="sent-text">
+          Sent
+          <i class="fa-solid fa-circle-check"></i>
+        </span>
         <i class="fa-solid fa-rocket"></i>
       </button>
+      <div class="form__thank-you-container">
+        <img class="thanking-bot-image" src="./public/images/thankyou-bot.png" alt="Thanking bot"/>
+        <p>
+          Will get back to you as soon as possible.
+        </p>
+        <button type="button" class="form__back-button">
+          <i class="fa-solid fa-arrow-left-long"></i>
+          Back
+        </button>
+      </div>
+      <input type="hidden" name="_next" value="">
     </form>
     <div class="contact-info__connecting-platforms">
       <i class="fa-brands fa-github-alt contact-info__connecting-platforms-github"></i>
