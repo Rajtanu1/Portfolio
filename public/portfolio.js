@@ -4,6 +4,9 @@ let project3ImageContainer = document.querySelector(".project3__image-container"
 let project1ImageElement = document.querySelector(".project1__img");
 let project2ImageElement = document.querySelector(".project2__img");
 let project3ImageElement = document.querySelector(".project3__img");
+let project1DescriptionContainer = document.querySelector(".project1__description");
+let project2DescriptionContainer = document.querySelector(".project2__description");
+let project3DescriptionContainer = document.querySelector(".project3__description");
 let project1InfoButton = document.querySelector(".project1__info-button");
 let project2InfoButton = document.querySelector(".project2__info-button");
 let project3InfoButton = document.querySelector(".project3__info-button");
@@ -23,6 +26,7 @@ let leftArrowIcon = document.querySelector(".fa-arrow-left-long");
 let sentText = document.querySelector(".sent-text");
 let thankyouContainer = document.querySelector(".form__thank-you-container");
 let httpRequest = new XMLHttpRequest();
+let viewportWidth = window.innerWidth;
 
 let checkTransformValuePresence = function (element) {
   if (element.style.transform !== "") {
@@ -30,6 +34,15 @@ let checkTransformValuePresence = function (element) {
   } else {
     return false;
   }
+};
+
+let extractFormData = function (form) {
+  let formData = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value
+  }
+  return formData;
 };
 
 let checkFormValidity = function () {
@@ -178,8 +191,11 @@ contactForm.addEventListener("keyup", function (event) {
 
 contactForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  httpRequest.open("POST", "https://formsubmit.co/994b926934c1ae40e2af507b73f2a6d");
-  httpRequest.send();
+
+  let formData = extractFormData(contactForm);
+  httpRequest.open("POST", "https://formsubmit.co/994b926934c1ae40e2af507b73f2a6df", true);
+  httpRequest.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+  httpRequest.send(JSON.stringify(formData));
 });
 
 formSubmitButton.addEventListener("click", function (event) {
@@ -224,6 +240,21 @@ navbarIcon.addEventListener("click", function (event) {
   }
 });
 
-window.addEventListener("wheel", function (event) {
+if(viewportWidth <= 768) {
+  let heightValue = "253px";
+
+  project1ImageContainer.style.height = heightValue;
+  project2ImageContainer.style.height = heightValue;
+  project3ImageContainer.style.height = heightValue;
+  project1DescriptionContainer.style.height = heightValue;
+  project2DescriptionContainer.style.height = heightValue;
+  project3DescriptionContainer.style.height = heightValue;
+
+  window.addEventListener("scroll", function (event) {
+    showHeader();
+  });
+} else {
+  window.addEventListener("wheel", function (event) {
   showHeader();
-});
+  });
+};
