@@ -926,7 +926,7 @@ name-field:valid, .email-field:valid, .message-field:valid {
     width: 100%;
     height: 43vh;
     align-items: center;
-    border-radius: 1.5rem;
+    border-radius: 8px;
     background-color: var(--darker-grey);
     font-size: 1rem;
   }
@@ -1009,10 +1009,12 @@ name-field:valid, .email-field:valid, .message-field:valid {
 
   .project1__image-container, .project2__image-container, .project3__image-container {
     height: 23rem;
+    border-radius: 1rem;
   }
 
   .project1__description, .project2__description, .project3__description {
     height: 23rem;
+    border-radius: 1rem;
     font-size: 1.5rem;
   }
 
