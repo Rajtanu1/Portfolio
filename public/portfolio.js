@@ -241,7 +241,7 @@ navbarIcon.addEventListener("click", function (event) {
 });
 
 if(viewportWidth <= 768) {
-  let heightValue = "260px";
+  let heightValue = "270px";
 
   project1ImageContainer.style.height = heightValue;
   project2ImageContainer.style.height = heightValue;
