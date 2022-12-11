@@ -193,7 +193,7 @@ contactForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   let formData = extractFormData(contactForm);
-  httpRequest.open("POST", "https://formsubmit.co/994b926934c1ae40e2af507b73f2a6df", true);
+  httpRequest.open("POST", "https://formsubmit.co/ajax/994b926934c1ae40e2af507b73f2a6df", true);
   httpRequest.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
   httpRequest.send(JSON.stringify(formData));
 });
