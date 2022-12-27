@@ -429,6 +429,7 @@ button {
 
 .project1__image-container:hover, .project2__image-container:hover, .project3__image-container:hover {
   transform: rotateY(0deg);
+  box-shadow: 0px 0.1px 50px 12px #d7d7d7;
 }
 
 .project1__img, .project2__img, .project3__img {
@@ -824,6 +825,14 @@ name-field:valid, .email-field:valid, .message-field:valid {
   font-size: 2.4rem;
 }
 
+.contact-info__connecting-platforms a {
+  transition: text-shadow 0.4s;
+}
+
+.contact-info__connecting-platforms a:hover {
+  text-shadow: 0px 5px black, 0px 4px black;
+}
+
 .contact-info__connecting-platforms-mobile {
   padding: 1rem 1.28rem;
 }
@@ -918,6 +927,7 @@ name-field:valid, .email-field:valid, .message-field:valid {
     position: absolute;
     border: 0px;
     border-radius: 8px;
+    box-shadow: 0px 0.1px 50px 12px #d7d7d7;
     transform-origin: top right;
     transform: none;
   }
