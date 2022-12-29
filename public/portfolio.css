@@ -137,7 +137,7 @@ button {
   font-size: 1.3rem;
   z-index: 1;
   color: var(--dark-plum);
-  transition: top 0.5s;
+  transition: top 0.5s, box-shadow 0.6s;
 }
 
 .header__logo {

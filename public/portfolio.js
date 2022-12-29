@@ -10,6 +10,7 @@ let project3DescriptionContainer = document.querySelector(".project3__descriptio
 let project1InfoButton = document.querySelector(".project1__info-button");
 let project2InfoButton = document.querySelector(".project2__info-button");
 let project3InfoButton = document.querySelector(".project3__info-button");
+let introContainer = document.querySelector(".intro");
 let moreAboutMyselfContainer = document.querySelector(".more-about-myself");
 let projectsContainer = document.querySelector(".projects");
 let contactInfoContainer = document.querySelector(".contact-info");
@@ -59,6 +60,14 @@ let clearFormInputFields = function () {
   contactForm.email.value = "";
   contactForm.message.value = "";
 };
+
+let addBoxShadowToHeader = function() {
+  header.style.boxShadow = "0px 0.1px 8px grey";
+}
+
+let removeBoxShadowFromHeader = function() {
+  header.style.boxShadow = "";
+}
 
 let animateObservedElement = function (elementToAnimate) {
   if (elementToAnimate === moreAboutMyselfContainer) {
@@ -239,6 +248,16 @@ navbarIcon.addEventListener("click", function (event) {
     navbarVisibility = true;
   }
 });
+
+window.addEventListener('scroll', function (event) {
+  let offsetTopValueOfHeader = header.offsetTop;
+  let heightOfIntroContainer = introContainer.offsetHeight;
+  if(offsetTopValueOfHeader > heightOfIntroContainer) {
+    addBoxShadowToHeader();
+  } else {
+    removeBoxShadowFromHeader();
+  }
+})
 
 if(viewportWidth <= 768) {
   let heightValue = "270px";
