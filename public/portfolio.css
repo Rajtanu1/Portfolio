@@ -252,7 +252,7 @@ button {
 .about {
   display: flex;
   width: 100%;
-  margin-bottom: 15rem;
+  margin-bottom: 5rem;
   overflow: hidden;
   color: #5b5353;
 }
@@ -319,7 +319,7 @@ button {
 .more-about-myself {
   width: 100vw;
   height: 100vh;
-  margin-bottom: 15rem;
+  margin-bottom: 5rem;
   padding: 10vh 5vw;
   box-sizing: border-box;
   border-radius: 5vw;
@@ -396,7 +396,7 @@ button {
 
 .projects {
   width: 100%;
-  margin-bottom: 15rem;
+  margin-bottom: 5rem;
   padding: 10vh 5vw;
   box-sizing: border-box;
   font-family: var(--exo2-and-tahoma-fontstack);
