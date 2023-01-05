@@ -62,7 +62,7 @@ let clearFormInputFields = function () {
 };
 
 let addBoxShadowToHeader = function() {
-  header.style.boxShadow = "0px 0.1px 8px grey";
+  header.style.boxShadow = "0px 0.1px 6px grey";
 }
 
 let removeBoxShadowFromHeader = function() {
